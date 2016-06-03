@@ -40,16 +40,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //            print(car)
 //        }
         
-        // show matching image from the tuple index
-        cell.imageView1.image = UIImage(named: tupleTableData![0].0)
-        if tupleTableData![1].2 {
-            cell.imageView2.image = UIImage(named: tupleTableData![1].0)
-        }
-//        cell.imageView2.image = UIImage(named: tupleTableData![1].0)
-        cell.imageView3.image = UIImage(named: tupleTableData![2].0)
-        cell.imageView4.image = UIImage(named: tupleTableData![3].0)
+//        // show matching image from the tuple index
+//        cell.imageView1.image = UIImage(named: tupleTableData![0].0)
+//        if tupleTableData![1].2 {
+//            cell.imageView2.image = UIImage(named: tupleTableData![1].0)
+//        }
+////        cell.imageView2.image = UIImage(named: tupleTableData![1].0)
+//        cell.imageView3.image = UIImage(named: tupleTableData![2].0)
+//        cell.imageView4.image = UIImage(named: tupleTableData![3].0)
         
-        
+        cell.imageView1.image = (tupleTableData![0].2) ? UIImage(named: tupleTableData![0].0) : nil
+        cell.imageView2.image = (tupleTableData![1].2) ? UIImage(named: tupleTableData![1].0) : nil
+        cell.imageView3.image = (tupleTableData![2].2) ? UIImage(named: tupleTableData![2].0) : nil
+        cell.imageView4.image = (tupleTableData![3].2) ? UIImage(named: tupleTableData![3].0) : nil
         
         
         
@@ -60,13 +63,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("Row \(indexPath.row) selected")
     }
     
-    func getRandomCarName() -> String {
+    private func getRandomCarName() -> String {
         let result = tableData[Int(arc4random() % 4)]
         return result
     }
     
-    func loadSampleData() {
+    private func loadSampleData() {
+        loadAllCarData()
+//        loadFirstThirdFourthCarData()
+//        loadFirstSecondFourthCarData()
+//        loadSecondThirdFourthCarData()
+    }
 
+    private func loadAllCarData() {
+        
+        var carName = getRandomCarName()
+        tupleTableData = [(carName, UIImage(named: carName)!, true)]
+        
+        carName = getRandomCarName()
+        tupleTableData?.append((carName, UIImage(named: carName)!, true))
+        
+        carName = getRandomCarName()
+        tupleTableData?.append((carName, UIImage(named: carName)!, true))
+        
+        carName = getRandomCarName()
+        tupleTableData?.append((carName, UIImage(named: carName)!, true))
+    }
+    
+    private func loadFirstThirdFourthCarData() {
+        
         var carName = getRandomCarName()
         tupleTableData = [(carName, UIImage(named: carName)!, true)]
         
@@ -75,10 +100,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         carName = getRandomCarName()
         tupleTableData?.append((carName, UIImage(named: carName)!, true))
-
+        
         carName = getRandomCarName()
         tupleTableData?.append((carName, UIImage(named: carName)!, true))
-
-        
     }
+    
+    private func loadFirstSecondFourthCarData() {
+        
+        var carName = getRandomCarName()
+        tupleTableData = [(carName, UIImage(named: carName)!, true)]
+        
+        carName = getRandomCarName()
+        tupleTableData?.append((carName, UIImage(named: carName)!, true))
+        
+        carName = getRandomCarName()
+        tupleTableData?.append((carName, UIImage(named: carName)!, false))
+        
+        carName = getRandomCarName()
+        tupleTableData?.append((carName, UIImage(named: carName)!, true))
+    }
+    
+    private func loadSecondThirdFourthCarData() {
+        
+        var carName = getRandomCarName()
+        tupleTableData = [(carName, UIImage(named: carName)!, false)]
+        
+        carName = getRandomCarName()
+        tupleTableData?.append((carName, UIImage(named: carName)!, true))
+        
+        carName = getRandomCarName()
+        tupleTableData?.append((carName, UIImage(named: carName)!, true))
+        
+        carName = getRandomCarName()
+        tupleTableData?.append((carName, UIImage(named: carName)!, true))
+    }
+    
 }
