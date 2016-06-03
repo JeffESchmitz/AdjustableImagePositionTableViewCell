@@ -23,6 +23,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.imageView1.image = UIImage(named: getRandomCarName())
         cell.imageView2.image = UIImage(named: getRandomCarName())
+        cell.imageView3.image = UIImage(named: getRandomCarName())
+        cell.imageView4.image = UIImage(named: getRandomCarName())
         
         return cell
     }
