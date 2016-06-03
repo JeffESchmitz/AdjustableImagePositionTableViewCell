@@ -15,5 +15,9 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var imageView3: UIImageView!
     @IBOutlet weak var imageView4: UIImageView!
     
-    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.imageView2.frame = CGRectMake(0, 0, 70, 70)
+    }
 }
