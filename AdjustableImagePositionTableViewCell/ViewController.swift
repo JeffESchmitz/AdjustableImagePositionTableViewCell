@@ -21,16 +21,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell 	{
         let cell = tableView.dequeueReusableCellWithIdentifier("CustomCell", forIndexPath: indexPath) as! CustomCell
         
-        let imageName = tableData[indexPath.row]
-        print("Car name: \(imageName)")
-        
-        let image = UIImage(named: imageName)
-        cell.imageView1.image = image
+        cell.imageView1.image = UIImage(named: getRandomCarName())
+        cell.imageView2.image = UIImage(named: getRandomCarName())
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("Row \(indexPath.row) selected")
+    }
+    
+    func getRandomCarName() -> String {
+        let result = tableData[Int(arc4random() % 4)]
+        return result
     }
 }
