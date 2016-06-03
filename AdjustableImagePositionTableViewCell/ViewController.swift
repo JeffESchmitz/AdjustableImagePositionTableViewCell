@@ -14,14 +14,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var tableData = ["Ferrari", "BMW", "Mitsubishi", "Lambo"]
     
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.tableData.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell 	{
-        
-//        let cell:CustomCell = self.tableView.dequeueReusableCellWithIdentifier("CustomCell") as! CustomCell
         let cell = tableView.dequeueReusableCellWithIdentifier("CustomCell", forIndexPath: indexPath) as! CustomCell
         
         let imageName = tableData[indexPath.row]
@@ -31,15 +28,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.imageView1.image = image
         
         return cell
-        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("Row \(indexPath.row) selected")
     }
-//    
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return 70
-//    }
-
 }
