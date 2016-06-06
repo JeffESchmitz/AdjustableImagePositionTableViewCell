@@ -42,20 +42,55 @@ class CustomCell: UITableViewCell {
         super.prepareForReuse()
     }
     
+    var nextXPosition: CGFloat = 0
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        imageView1.frame = CGRectMake(0, 0, 70, 70)
+        imageView1.frame = CGRectMake(nextXPosition, 0, 70, 70)
         imageView1.image = cars![0].image
+        if let hidden = cars![0].hidden {
+            if hidden {
+                imageView1.image = nil
+            }
+        }
+        nextXPosition = nextXPosition + imageView1.frame.width
+        print("nextXPosition: \(nextXPosition)")
+
         
-        imageView2.frame = CGRectMake(70, 0, 70, 70)
+        imageView2.frame = CGRectMake(nextXPosition, 0, 70, 70)
         imageView2.image = cars![1].image
+        if let hidden = cars![1].hidden {
+            if hidden {
+                imageView2.image = nil
+            }
+        }
+        nextXPosition = nextXPosition + imageView2.frame.width
+        print("nextXPosition: \(nextXPosition)")
+
         
-        imageView3.frame = CGRectMake(140, 0, 70, 70)
+        imageView3.frame = CGRectMake(nextXPosition, 0, 70, 70)
         imageView3.image = cars![2].image
+        if let hidden = cars![2].hidden {
+            if hidden {
+                imageView3.image = nil
+            
+            }
+        }
+        nextXPosition = nextXPosition + imageView3.frame.width
+        print("nextXPosition: \(nextXPosition)")
         
-        imageView4.frame = CGRectMake(210, 0, 70, 70)
+        
+        imageView4.frame = CGRectMake(nextXPosition, 0, 70, 70)
         imageView4.image = cars![3].image
+        if let hidden = cars![3].hidden {
+            if hidden {
+                imageView4.image = nil
+            
+            }
+        }
+        nextXPosition = nextXPosition + imageView4.frame.width
+        print("nextXPosition: \(nextXPosition)")
         
     }
 

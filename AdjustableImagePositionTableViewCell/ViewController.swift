@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // Tuple holds car name, logo image, hidden boolean
 //    var tupleTableData: [(String, UIImage, Bool)]? = nil
-    var tupleTableData: [Car]?
+    var carsData: [Car]?
     
     
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell 	{
         let cell = tableView.dequeueReusableCellWithIdentifier(NSStringFromClass(CustomCell), forIndexPath: indexPath) as! CustomCell
-        cell.cars = tupleTableData!
+        cell.cars = carsData!
         return cell
     }
     
@@ -48,8 +48,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     private func loadSampleData() {
-        loadAllCarData()
-//        loadFirstThirdFourthCarData()
+//        loadAllCarData()
+        loadFirstThirdFourthCarData()
 //        loadFirstSecondFourthCarData()
 //        loadSecondThirdFourthCarData()
     }
@@ -57,16 +57,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private func loadAllCarData() {
         
         var carName = "Ferrari"
-        tupleTableData = [Car(name: carName, image: UIImage(named: carName)!, hidden: true)]
+        carsData = [Car(name: carName, image: UIImage(named: carName)!, hidden: false)]
         
         carName = "BMW"
-        tupleTableData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
+        carsData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: false))
         
         carName = "Mitsubishi"
-        tupleTableData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
+        carsData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: false))
         
         carName = "Lambo"
-        tupleTableData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
+        carsData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: false))
         
         
     }
@@ -74,46 +74,46 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private func loadFirstThirdFourthCarData() {
         
         var carName = getRandomCarName()
-        tupleTableData = [Car(name: carName, image: UIImage(named: carName)!, hidden: true)]
+        carsData = [Car(name: carName, image: UIImage(named: carName)!, hidden: false)]
         
         carName = getRandomCarName()
-        tupleTableData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
+        carsData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
         
         carName = getRandomCarName()
-        tupleTableData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
+        carsData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: false))
         
         carName = getRandomCarName()
-        tupleTableData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
+        carsData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: false))
     }
     
     private func loadFirstSecondFourthCarData() {
         
         var carName = getRandomCarName()
-        tupleTableData = [Car(name: carName, image: UIImage(named: carName)!, hidden: true)]
+        carsData = [Car(name: carName, image: UIImage(named: carName)!, hidden: false)]
         
         carName = getRandomCarName()
-        tupleTableData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
+        carsData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: false))
         
         carName = getRandomCarName()
-        tupleTableData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
+        carsData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
         
         carName = getRandomCarName()
-        tupleTableData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
+        carsData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: false))
     }
     
     private func loadSecondThirdFourthCarData() {
         
         var carName = getRandomCarName()
-        tupleTableData = [Car(name: carName, image: UIImage(named: carName)!, hidden: true)]
+        carsData = [Car(name: carName, image: UIImage(named: carName)!, hidden: true)]
         
         carName = getRandomCarName()
-        tupleTableData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
+        carsData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: false))
         
         carName = getRandomCarName()
-        tupleTableData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
+        carsData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: false))
         
         carName = getRandomCarName()
-        tupleTableData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: true))
+        carsData?.append(Car(name: carName, image: UIImage(named: carName)!, hidden: false))
     }
     
 }
