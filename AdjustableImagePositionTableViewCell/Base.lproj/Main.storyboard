@@ -25,30 +25,9 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lkq-Ac-mnB" id="zqe-aU-CoP">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y5Q-ev-W27">
-                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aBc-cW-Now">
-                                                    <rect key="frame" x="90" y="0.0" width="70" height="70"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7D6-g5-scY">
-                                                    <rect key="frame" x="180" y="0.0" width="70" height="70"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v1r-Cl-a6f">
-                                                    <rect key="frame" x="270" y="0.0" width="70" height="70"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="imageView1" destination="y5Q-ev-W27" id="xta-XQ-54d"/>
-                                            <outlet property="imageView2" destination="aBc-cW-Now" id="BM0-37-fre"/>
-                                            <outlet property="imageView3" destination="7D6-g5-scY" id="oGC-ca-aYa"/>
-                                            <outlet property="imageView4" destination="v1r-Cl-a6f" id="VdZ-o7-15Y"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
